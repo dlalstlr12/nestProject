@@ -10,4 +10,9 @@ export class AppController {
     const message = this.ConfigService.get('MESSAGE');
     return message;
   }
+
+  @Get('service-url')
+  getServiceUrl(): string {
+    return this.ConfigService.get('SERVICE_URL');
+  }
 }
