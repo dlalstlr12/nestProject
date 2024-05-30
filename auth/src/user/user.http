@@ -16,7 +16,7 @@ POST http://localhost:3000/user/update/minsik@naver.com
 content-type: application/json
 
 {
-  "email": "minsi@naver.com",
+  "email": "minsik@naver.com",
   "username": "minsik2",
   "password": "test12345"
 }
@@ -24,3 +24,12 @@ content-type: application/json
 ### 유저 삭제 
 DELETE http://localhost:3000/user/delete/minsik@naver.com
 
+### 잘못된 이메일을 입력한 경우 
+POST http://localhost:3000/user/create
+content-type: application/json
+
+{
+  "username": "minsik",
+  "password": "test1234",
+  "email": "minsiknaver"
+}
