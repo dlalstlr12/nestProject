@@ -1,0 +1,26 @@
+### 유저 생성
+POST http://localhost:3000/user/create
+content-type: application/json
+
+{
+    "username":"minsik",
+    "password" : "test1234",
+    "email" : "minsik@naver.com"
+}
+
+### 유저 정보 찾기
+GET http://localhost:3000/user/getUser/minsik@naver.com
+
+### 유저 정보 업데이트
+POST http://localhost:3000/user/update/minsik@naver.com
+content-type: application/json
+
+{
+  "email": "minsi@naver.com",
+  "username": "minsik2",
+  "password": "test12345"
+}
+
+### 유저 삭제 
+DELETE http://localhost:3000/user/delete/minsik@naver.com
+
