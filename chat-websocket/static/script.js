@@ -1,4 +1,5 @@
-const socket = io('http://localhost:3000');
+const socket = io('http://localhost:3000/chat');
+const nickname = prompt('닉네임을 입력해 주세요.');
 
 socket.on('connect', () => {
   console.log('connected');
@@ -6,7 +7,8 @@ socket.on('connect', () => {
 
 function sendMessage() {
   const message = $('#message').val();
-  socket.emit('message', message);
+  $('#chat').append(`<div>나 : ${message}</div>`);
+  socket.emit('message', { message, nickname });
 }
 
 socket.on('message', (message) => {
