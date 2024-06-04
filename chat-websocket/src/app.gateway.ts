@@ -5,7 +5,7 @@ import {
 } from '@nestjs/websockets';
 import { Server, Socket } from 'socket.io';
 
-@WebSocketGateway()
+@WebSocketGateway({ namespace: 'chat' })
 export class ChatGateway {
   @WebSocketServer() server: Server;
 
