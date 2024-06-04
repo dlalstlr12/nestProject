@@ -12,6 +12,7 @@ Auth와 Chat 프로젝트들은 간단한 html로 테스트를 구현하였습�
   <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat&logo=NestJS&logoColor=white" />
   <img src="https://img.shields.io/badge/Socket.io-010101?style=flat&logo=Socket.io&logoColor=white" />
 	<img src="https://img.shields.io/badge/HTML-E34F26?style=flat&logo=HTML&logoColor=white" />
+ <img src="https://img.shields.io/badge/googleauthenticator-4285F4?style=flat&logo=googleauthenticator&logoColor=white" />
 
 * * *
 
