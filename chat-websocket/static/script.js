@@ -5,6 +5,7 @@ let currentRoom = '';
 
 socket.on('connect', () => {
   console.log('connected');
+  roomSocket.emit('getRooms');
 });
 
 function sendMessage() {
