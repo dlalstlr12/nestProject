@@ -16,6 +16,7 @@ export class ChatGateway {
     socket.broadcast.emit('message', `${nickname}: ${message}`);
   }
 }
+
 @WebSocketGateway({ namespace: 'room' })
 export class RoomGateway {
   constructor(private readonly chatGateway: ChatGateway) {}
@@ -24,6 +25,15 @@ export class RoomGateway {
 
   @WebSocketServer()
   server: Server;
+
+  @SubscribeMessage('message')
+  handleMessageToRoom(socket: Socket, data) {
+    const { nickname, room, message } = data;
+    console.log(data);
+    socket.broadcast.to(room).emit('message', {
+      message: `${nickname}: ${message}`,
+    });
+  }
 
   @SubscribeMessage('createRoom')
   handleMessage(@MessageBody() data) {

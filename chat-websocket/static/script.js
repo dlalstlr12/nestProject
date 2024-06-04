@@ -37,6 +37,22 @@ roomSocket.on('rooms', (data) => {
 });
 function joinRoom(room) {
   roomSocket.emit('joinRoom', { room, nickname, toLeaveRoom: currentRoom });
+  $('#chat').html('');
   currentRoom = room;
   return false;
 }
+function sendMessage() {
+  if (currentRoom === '') {
+    alert('방을 선택해주세요.');
+    return;
+  }
+  const message = $('#message').val();
+  const data = { message, nickname, room: currentRoom };
+  $('#chat').append(`<div>나 : ${message}</div>`);
+  roomSocket.emit('message', data);
+  return false;
+}
+roomSocket.on('message', (data) => {
+  console.log(data);
+  $('#chat').append(`<div>${data.message}</div>`);
+});
