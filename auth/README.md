@@ -11,3 +11,18 @@
 - Backend : Nest.js, Passport.js, TypeORM
 - database : MySQL
 
+## 환경 변수 설정
+.env 파일을 생성하고 환경 변수를 설정해 줍니다.
+
+GOOGLE_CLIENT_ID={자신의 구글 클라이언트 ID}
+
+GOOGLE_CLIENT_SECRET={자신의 구글 클라이언트SECRET}
+
+## 개발 환경
+     cd auth
+     
+     npm install
+     
+     npm run start
+* * *
+
